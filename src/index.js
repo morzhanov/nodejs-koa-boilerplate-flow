@@ -1,11 +1,14 @@
+// @flow
+
 import http from 'http'
+import { Connection } from 'typeorm'
 import { createDatabaseConnection } from './db'
 import { createApp } from './app'
 import { PORT, NODE_ENV } from './constants'
 import { logger } from './utils/logger'
 import { configureContainer } from './di/container'
 
-createDatabaseConnection().then(connection => {
+createDatabaseConnection().then((connection: Connection) => {
   logger.info('Connected to database!')
 
   const container = configureContainer(connection)

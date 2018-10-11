@@ -1,7 +1,11 @@
-import { createController } from 'awilix-koa'
+// @flow
 
-const userController = userService => ({
-  getUser: async ctx => {
+import { createController } from 'awilix-koa'
+import { Context } from 'koa'
+import UserService from '../services/user.service'
+
+const userController = (userService: UserService): Constructor => ({
+  getUser: async (ctx: Context): Promise => {
     const {
       request: {
         body: { userId }
@@ -19,7 +23,7 @@ const userController = userService => ({
     ctx.body = user
   },
 
-  updateUser: async ctx => {
+  updateUser: async (ctx: Context): Promise => {
     const {
       request: {
         body: { userData, userId }
@@ -33,7 +37,7 @@ const userController = userService => ({
     await userService.updateUser(userId, userData)
   },
 
-  deleteUser: async ctx => {
+  deleteUser: async (ctx: Context): Promise => {
     const {
       request: {
         body: { userId }

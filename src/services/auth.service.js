@@ -1,15 +1,18 @@
+// @flow
+
 import bcrypt from 'bcrypt-nodejs'
+import { Connection } from 'typeorm'
 import jwt from 'jsonwebtoken'
 import { SECRET, ACCESS_TOKEN_EXPIRES } from '../constants'
 import User from '../entities/user.entity'
 
 export default class AuthService {
-  constructor(dbConnection) {
+  constructor(dbConnection: Connection) {
     this.dbConnection = dbConnection
   }
 
-  async login(email, password) {
-    const user = await this.getUserByEmail(email)
+  async login(email: string, password: string): string {
+    const user: User = await this.getUserByEmail(email)
 
     if (!user) {
       return null
@@ -22,28 +25,28 @@ export default class AuthService {
     return this.issueToken(user)
   }
 
-  async signup(email, password) {
+  async signup(email: string, password: string): string {
     const user = User.create({ email, password })
     await this.dbConnection.manager.getRepository(User).insert(user)
     return this.issueToken(user)
   }
 
-  async getUserByEmail(email) {
+  async getUserByEmail(email: string): User {
     return this.dbConnection.manager.getRepository(User).findOne({ email })
   }
 
-  comparePassword(plainPass, user) {
-    return new Promise((resolve, reject) => {
+  comparePassword(plainPass: string, user: User): boolean {
+    return new Promise((resolve: Resolve, reject: Reject) => {
       bcrypt.compare(
         plainPass,
         user.password,
-        (err, isPasswordMatch) =>
+        (err: Error, isPasswordMatch: boolean): boolean =>
           err == null ? resolve(isPasswordMatch) : reject(err)
       )
     })
   }
 
-  issueToken(user) {
+  issueToken(user: User): string {
     return jwt.sign({ id: user.id }, SECRET, {
       expiresIn: ACCESS_TOKEN_EXPIRES
     })

@@ -1,6 +1,12 @@
+// @flow
+
+import { Context } from 'koa'
 import { logger } from '../utils/logger'
 
-export const errorHandler = async (ctx, next) => {
+export const errorHandler = async (
+  ctx: Context,
+  next: KoaNextFunction
+): void => {
   try {
     await next()
   } catch (err) {

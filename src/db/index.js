@@ -1,8 +1,10 @@
-import { createConnection } from 'typeorm'
+// @flow
+
+import { createConnection, Connection } from 'typeorm'
 import { logger } from '../utils/logger'
 import User from '../entities/user.entity'
 
-export const createDatabaseConnection = async () => {
+export const createDatabaseConnection = async (): Connection => {
   const config = {
     host: process.env.DB_HOST,
     port: +process.env.DB_PORT,

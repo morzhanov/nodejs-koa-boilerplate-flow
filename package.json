@@ -6,7 +6,7 @@
   "author": "Vlad Morzhanov",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "nodemon",
     "build": "babel src --out-dir dist",
     "serve": "node ./dist/index.js"
   },

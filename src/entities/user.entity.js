@@ -1,3 +1,5 @@
+// @flow
+
 import bcrypt from 'bcrypt-nodejs'
 import {
   Column,
@@ -9,7 +11,13 @@ import {
 
 @Entity()
 class User {
-  static create({ email, password }) {
+  static create({
+    email,
+    password
+  }: {
+    email: string,
+    password: string
+  }): User {
     const user = new User()
     user.email = email
     user.password = password
@@ -27,11 +35,11 @@ class User {
 
   @BeforeInsert()
   @BeforeUpdate()
-  async hashPwd() {
+  async hashPwd(): void {
     this.password = await this.cryptPassword(this.password)
   }
 
-  async cryptPassword(password) {
+  async cryptPassword(password: string): string {
     const salt = bcrypt.genSaltSync(10)
     return bcrypt.hashSync(password, salt)
   }

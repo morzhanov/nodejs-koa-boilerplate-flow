@@ -1,3 +1,5 @@
+// @flow
+
 import winston from 'winston'
 import { NODE_ENV } from '../constants'
 

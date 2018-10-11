@@ -1,8 +1,11 @@
 // @flow
-import { createController } from 'awilix-koa'
 
-const authController = authService => ({
-  login: async ctx => {
+import { createController } from 'awilix-koa'
+import { Context } from 'koa'
+import AuthService from '../services/auth.service'
+
+const authController = (authService: AuthService): Constructor => ({
+  login: async (ctx: Context): Promise => {
     const {
       request: {
         body: { email, password }
@@ -18,7 +21,7 @@ const authController = authService => ({
     ctx.body = token
   },
 
-  signup: async ctx => {
+  signup: async (ctx: Context): Constructor => {
     const {
       request: {
         body: { email, password }

@@ -1,4 +1,7 @@
+// @flow
+
 import Koa from 'koa'
+import { Container } from 'awilix'
 import cors from '@koa/cors'
 import bodyParser from 'koa-bodyparser'
 import compress from 'koa-compress'
@@ -8,7 +11,7 @@ import { requestLogger } from './middleware/request-logger'
 import { notFoundHandler } from './middleware/not-found'
 import { errorHandler } from './middleware/error-handler'
 
-export const createApp = container => {
+export const createApp = (container: Container): Koa => {
   logger.info('Creating app instance')
 
   const app = new Koa()

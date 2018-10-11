@@ -1,7 +1,10 @@
+// @flow
+
 import jwt from 'jsonwebtoken'
+import { Context } from 'koa'
 import { SECRET } from '../constants'
 
-export const jwtCheck = async ctx => {
+export const jwtCheck = async (ctx: Context): void => {
   const token = ctx.headers['x-token']
 
   if (!token) {
@@ -13,7 +16,7 @@ export const jwtCheck = async ctx => {
     return
   }
 
-  jwt.verify(token, SECRET, (err, decoded) => {
+  jwt.verify(token, SECRET, (err: Error, decoded: DecodedData) => {
     if (err) {
       ctx.status = 403
       ctx.body = {
