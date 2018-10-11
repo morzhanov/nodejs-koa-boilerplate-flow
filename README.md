@@ -1,8 +1,12 @@
-# NodeJS Koa Boilerplate
+# NodeJS Koa Boilerplate (Flow)
 
-<img src="https://i.imgur.com/Z0vXT6v.png"/>
+# UNDER CONSTRUCTION
+
+<img src="https://i.imgur.com/zTVeRZx.png"/>
 
 Node.js Koa Boilerplate is an project that allows you to start new node.js project from scratch.
+
+This project uses Flow. You can review <a href="https://github.com/VladMorzhanov/nodejs-koa-boilerplate-ts">Typescript</a> and <a href="https://github.com/VladMorzhanov/nodejs-koa-boilerplate">Javascript</a> versions.
 
 ## Installation
 
@@ -17,28 +21,27 @@ Use these steps to install project
 
 This boilerplate contains such folders:
 
-* <b>/src </b> - main sources folder.
-* <b>/src/constants </b> - app constants.
-* <b>/src/controllers </b> - contain controllers that receives requests from routes, executes business logic via services and returns responses to client. 
-* <b>/src/db </b> - contain scripts to setup and manage database
-* <b>/src/middleware </b> - app middlewares
-* <b>/src/entities </b> - database entities
-* <b>/src/services </b> - services contains logic to manage database, execute requests to other servers, change application behabior, and etc.
-* <b>/src/app.ts </b> - app configuration
-* <b>/src/index.ts </b> - contain main scripts that configures and run server
-* <b>/test </b> - contains tests for controllers, services and other parts of application.
+- <b>/src </b> - main sources folder.
+- <b>/src/constants </b> - app constants.
+- <b>/src/controllers </b> - contain controllers that receives requests from routes, executes business logic via services and returns responses to client.
+- <b>/src/db </b> - contain scripts to setup and manage database
+- <b>/src/middleware </b> - app middlewares
+- <b>/src/entities </b> - database entities
+- <b>/src/services </b> - services contains logic to manage database, execute requests to other servers, change application behabior, and etc.
+- <b>/src/app.js </b> - app configuration
+- <b>/src/index.js </b> - contain main scripts that configures and run server
+- <b>/test </b> - contains tests for controllers, services and other parts of application.
 
 ## NPM Scripts
 
-* start - run node.js server
-* serve - run builded files
-* build - build project
+- start - run dev server using nodemon
+- serve - run production server
 
 ## Main Technologies and libraries
 
 - <a href="https://nodejs.org/en/">NodeJS</a>
 - <a href="https://koajs.com/#">KoaJS</a>
-- <a href="https://www.typescriptlang.org/">Typescript</a>
+- <a href="https://babeljs.io/">Babel</a>
 - <a href="https://github.com/auth0/node-jsonwebtoken">jsonwebtoken</a>
 - <a href="https://github.com/typeorm/typeorm">typeorm</a>
 - <a href="https://github.com/jeffijoe/awilix">awilix</a>
