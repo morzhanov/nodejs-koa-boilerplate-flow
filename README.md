@@ -40,6 +40,7 @@ This boilerplate contains such folders:
 - <a href="https://nodejs.org/en/">NodeJS</a>
 - <a href="https://koajs.com/#">KoaJS</a>
 - <a href="https://babeljs.io/">Babel</a>
+- <a href="https://flow.org/">Flow</a>
 - <a href="https://github.com/auth0/node-jsonwebtoken">jsonwebtoken</a>
 - <a href="https://github.com/typeorm/typeorm">typeorm</a>
 - <a href="https://github.com/jeffijoe/awilix">awilix</a>
