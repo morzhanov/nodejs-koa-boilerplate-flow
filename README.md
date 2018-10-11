@@ -1,7 +1,5 @@
 # NodeJS Koa Boilerplate (Flow)
 
-# UNDER CONSTRUCTION
-
 <img src="https://i.imgur.com/zTVeRZx.png"/>
 
 Node.js Koa Boilerplate is an project that allows you to start new node.js project from scratch.
