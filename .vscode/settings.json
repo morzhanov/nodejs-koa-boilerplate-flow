@@ -1,0 +1,6 @@
+{
+  "flow.enabled": true,
+  "flow.runOnEdit": true,
+  "flow.showStatus": true,
+  "flow.stopFlowOnExit": true
+}
