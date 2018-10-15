@@ -10,7 +10,7 @@ import {
 import { Connection } from 'typeorm'
 import { logger } from '../utils/logger'
 
-const modulesToLoad = ['services/*.ts', Lifetime.SCOPED]
+const modulesToLoad = ['services/*.js', Lifetime.SCOPED]
 
 export const configureContainer = (dbConnection: Connection): Container => {
   const opts = {

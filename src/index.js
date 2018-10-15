@@ -1,5 +1,6 @@
 // @flow
 
+import '@babel/polyfill'
 import http from 'http'
 import { Connection } from 'typeorm'
 import { createDatabaseConnection } from './db'
